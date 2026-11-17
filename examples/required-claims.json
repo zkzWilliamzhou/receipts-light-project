@@ -1,0 +1,7 @@
+[
+  "tests.pass",
+  "build.ok",
+  "deps.unchanged",
+  "secrets.none_added",
+  "checks.not_disabled"
+]

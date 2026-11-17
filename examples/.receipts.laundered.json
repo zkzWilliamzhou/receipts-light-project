@@ -1,0 +1,5 @@
+{
+  "commands": {
+    "tests": ["python3", "-m", "pytest", "-k", "trivial", "-q"]
+  }
+}

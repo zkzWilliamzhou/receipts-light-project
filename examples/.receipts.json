@@ -1,0 +1,7 @@
+{
+  "commands": {
+    "tests": ["python3", "-c", "print('collected 4 items'); print('2 passed, 2 failed in 0.2s'); raise SystemExit(1)"],
+    "build": ["python3", "-c", "print('build ok')"]
+  },
+  "require_known_runner": false
+}

@@ -1,0 +1,50 @@
+ROUND 1  path & filesystem safety
+    [PASS] traversal / absolute / windows paths rejected: 5 hostile forms refused
+    [PASS] .git excluded from capture: no .git entry in snapshot
+    [PASS] file size cap enforced: oversize read refused
+    [PASS] hardlink refused: multi-link file refused
+ROUND 2  command execution safety
+    [PASS] no eval/exec/system/shell=True: 0 banned constructs
+    [PASS] selection flags refused: -k refused, -q allowed
+    [PASS] timeout clamped: negative timeout still executes safely
+    [PASS] secret env names scrubbed: 3 allow-listed vars
+ROUND 3  parser & input safety
+    [PASS] duplicate JSON keys rejected: duplicate refused
+    [PASS] deep JSON rejected: depth refused
+    [PASS] trailing garbage rejected: trailing refused
+    [PASS] bracket/brace prose parsed: PR-body prefixes accepted as prose
+    [PASS] input size cap: 1 MiB cap
+ROUND 4  claim semantics & laundering
+    [PASS] filtered run never PASS: INDETERMINATE
+    [PASS] zero collected never PASS: INDETERMINATE
+    [PASS] numeric mismatch FAIL: 34 vs 3 reported
+    [PASS] semantic claim never PASS: INDETERMINATE
+    [PASS] unknown claim id UNCHECKABLE: UNCHECKABLE
+ROUND 5  snapshot & determinism
+    [PASS] capture deterministic: identical tree digest
+    [PASS] baseline JSON roundtrip: digest preserved
+    [PASS] retained text capped: 512 KiB cap
+    [PASS] golden byte-identical: PASS: golden byte-identical (7844 bytes, 12 scenarios)
+ROUND 6  reporting safety & UX
+    [PASS] HTML escaped and offline: escaped, no URLs, no script tag
+    [PASS] terminal ANSI stripped: no escape byte
+    [PASS] JSON self-describing: 4 keys present
+ROUND 7  correctness & edge cases
+    [PASS] negation not compiled as success: guarded
+    [PASS] numeric claims extracted: 34
+    [PASS] empty input INDETERMINATE: input.no_claims
+    [PASS] exit codes 0/1/2/3: 0 / 3 / 2 verified
+ROUND 8  supply chain & release
+    [PASS] stdlib-only runtime: 0 foreign imports
+    [PASS] README scoped honestly: 23 explicit non-goals, 0 overclaims
+    [PASS] zipapp present: 23888 bytes
+    [PASS] zipapp smoke: receipts 1.0.0 (stdlib-only, offline)
+ROUND 9  independent re-review (runner compatibility & type confusion)
+    [PASS] go ./... and pytest . are whole-suite, not selection: explicit whole-suite roots allowed
+    [PASS] bare test files / -k still refused: selection still refused
+    [PASS] JSON boolean version rejected: True != 1
+    [PASS] JSON float version rejected: 1.0 != 1
+    [PASS] boolean span offsets FAIL: type confusion refused
+    [PASS] golden still byte-identical after Round 9 fixes: PASS: golden byte-identical (7844 bytes, 12 scenarios)
+
+RESULT: 9/9 rounds PASS

@@ -1,0 +1,127 @@
+[
+  {
+    "source": "stop-slop",
+    "vendored": "stop-slop",
+    "files": 7
+  },
+  {
+    "source": "anthropics/skills:skill-creator",
+    "vendored": "anthropics/skill-creator",
+    "files": 18
+  },
+  {
+    "source": "anthropics/skills:claude-api",
+    "vendored": "anthropics/claude-api",
+    "files": 96
+  },
+  {
+    "source": "anthropics/skills:mcp-builder",
+    "vendored": "anthropics/mcp-builder",
+    "files": 11
+  },
+  {
+    "source": "anthropics/skills:webapp-testing",
+    "vendored": "anthropics/webapp-testing",
+    "files": 6
+  },
+  {
+    "source": "vercel-labs/agent-skills:writing-guidelines",
+    "vendored": "vercel-labs/writing-guidelines",
+    "files": 1
+  },
+  {
+    "source": "vercel-labs/agent-skills:react-best-practices",
+    "vendored": "vercel-labs/react-best-practices",
+    "files": 76
+  },
+  {
+    "source": "vercel-labs/skills:find-skills",
+    "vendored": "vercel-labs/find-skills",
+    "files": 1
+  },
+  {
+    "source": "obra/superpowers:brainstorming",
+    "vendored": "superpowers/brainstorming",
+    "files": 8
+  },
+  {
+    "source": "obra/superpowers:test-driven-development",
+    "vendored": "superpowers/test-driven-development",
+    "files": 2
+  },
+  {
+    "source": "obra/superpowers:verification-before-completion",
+    "vendored": "superpowers/verification-before-completion",
+    "files": 1
+  },
+  {
+    "source": "obra/superpowers:systematic-debugging",
+    "vendored": "superpowers/systematic-debugging",
+    "files": 6
+  },
+  {
+    "source": "obra/superpowers:requesting-code-review",
+    "vendored": "superpowers/requesting-code-review",
+    "files": 2
+  },
+  {
+    "source": "obra/superpowers:receiving-code-review",
+    "vendored": "superpowers/receiving-code-review",
+    "files": 1
+  },
+  {
+    "source": "obra/superpowers:writing-plans",
+    "vendored": "superpowers/writing-plans",
+    "files": 1
+  },
+  {
+    "source": "obra/superpowers:executing-plans",
+    "vendored": "superpowers/executing-plans",
+    "files": 3
+  },
+  {
+    "source": "obra/superpowers:using-superpowers",
+    "vendored": "superpowers/using-superpowers",
+    "files": 8
+  },
+  {
+    "source": "mattpocock/skills:improve-codebase-architecture",
+    "vendored": "mattpocock/improve-codebase-architecture",
+    "files": 3
+  },
+  {
+    "source": "mattpocock/skills:codebase-design",
+    "vendored": "mattpocock/codebase-design",
+    "files": 4
+  },
+  {
+    "source": "mattpocock/skills:tdd",
+    "vendored": "mattpocock/tdd",
+    "files": 4
+  },
+  {
+    "source": "mattpocock/skills:code-review",
+    "vendored": "mattpocock/code-review",
+    "files": 2
+  },
+  {
+    "source": "mattpocock/skills:grill-with-docs",
+    "vendored": "mattpocock/grill-with-docs",
+    "files": 2
+  },
+  {
+    "source": "mattpocock/skills:diagnosing-bugs",
+    "vendored": "mattpocock/diagnosing-bugs",
+    "files": 3
+  },
+  {
+    "source": "mattpocock/skills:writing-for-agents",
+    "vendored": "mattpocock/writing-for-agents",
+    "files": 3
+  },
+  {
+    "source": "mattpocock/skills:grilling",
+    "vendored": "mattpocock/grilling",
+    "files": 2
+  }
+]

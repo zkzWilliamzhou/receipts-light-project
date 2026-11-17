@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.receipts/
+.receipts.json.local
+report.html
+*.pyz.bak
+build/
+dist/

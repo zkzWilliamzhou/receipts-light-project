@@ -1,0 +1,51 @@
+Third-party notices
+===================
+
+This repository vendors Agent Skills (SKILL.md files and their reference
+material) from public GitHub repositories. They are instruction documents,
+not executable runtime dependencies of `receipts`. The program itself imports
+only the Python standard library.
+
+  skills/anthropics/*
+      Source: https://github.com/anthropics/skills
+      License: Apache-2.0 for the open-source skills in that repository
+      (per the upstream README). Included folders: skill-creator, claude-api,
+      mcp-builder, webapp-testing.
+
+  skills/superpowers/*
+      Source: https://github.com/obra/superpowers
+      License: MIT (per the upstream README).
+      Included folders: brainstorming, test-driven-development,
+      verification-before-completion, systematic-debugging,
+      requesting-code-review, receiving-code-review, writing-plans,
+      executing-plans, using-superpowers.
+
+  skills/mattpocock/*
+      Source: https://github.com/mattpocock/skills
+      License: MIT (per the upstream README).
+      Included folders: improve-codebase-architecture, codebase-design, tdd,
+      code-review, grill-with-docs, diagnosing-bugs, writing-for-agents,
+      grilling.
+
+  skills/vercel-labs/*
+      Sources: https://github.com/vercel-labs/agent-skills and
+               https://github.com/vercel-labs/skills
+      Included folders: writing-guidelines, react-best-practices, find-skills.
+      License: as stated in each upstream repository.
+
+  skills/stop-slop/*
+      Source: https://github.com/hardikpandya/stop-slop
+      License: MIT (per the upstream repository).
+
+Fetch record: research/upstream-install-manifest.json.
+Vendored inventory: skills/SKILLS_MANIFEST.json.
+
+One requested repository, https://github.com/smeltery/skills, was unavailable
+at fetch time (the installer received a non-tarball response). The
+`improve-codebase-architecture` skill required for the architecture pass was
+obtained from mattpocock/skills, which carries it, and is vendored at
+skills/mattpocock/improve-codebase-architecture/.
+
+These skills were read as workflow guidance during development. They are
+included here so the build is reproducible and attributable. Users should
+review upstream SKILL.md files before invoking them in their own agents.

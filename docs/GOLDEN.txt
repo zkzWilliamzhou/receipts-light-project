@@ -1,0 +1,338 @@
+===== 01_no_run =====
+{
+  "counts": {
+    "INDETERMINATE": 1
+  },
+  "results": [
+    {
+      "claim_id": "tests.pass",
+      "evidence": {},
+      "reason": "execution disabled (--no-run); claim was not falsified",
+      "status": "INDETERMINATE"
+    }
+  ],
+  "tree_sha256": "3edf9fe1623f8b335d3776c8fcf1a6a7a4401563b92831504205de3232c379f1"
+}
+
+===== 02_semantic =====
+{
+  "counts": {
+    "INDETERMINATE": 1
+  },
+  "results": [
+    {
+      "claim_id": "api.unchanged",
+      "evidence": {
+        "proof_tool_supplied": false,
+        "required": [
+          "extractor",
+          "baseline_revision",
+          "visibility_rules",
+          "comparator",
+          "toolchain_version"
+        ]
+      },
+      "reason": "semantic claim: requires an explicit API extractor, baseline revision, visibility rules and comparator; none supplied",
+      "status": "INDETERMINATE"
+    }
+  ],
+  "tree_sha256": "3edf9fe1623f8b335d3776c8fcf1a6a7a4401563b92831504205de3232c379f1"
+}
+
+===== 03_uncheckable =====
+{
+  "counts": {
+    "UNCHECKABLE": 1
+  },
+  "results": [
+    {
+      "claim_id": "uncheckable.claim",
+      "evidence": {},
+      "reason": "claim-shaped prose with no registered predicate",
+      "status": "UNCHECKABLE"
+    }
+  ],
+  "tree_sha256": "3edf9fe1623f8b335d3776c8fcf1a6a7a4401563b92831504205de3232c379f1"
+}
+
+===== 04_files =====
+{
+  "counts": {
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "claim_id": "files.changed",
+      "evidence": {
+        "added": [
+          "new.py"
+        ],
+        "baseline_tree": "3edf9fe1623f8b335d3776c8fcf1a6a7a4401563b92831504205de3232c379f1",
+        "changed": [
+          "a.py",
+          "new.py",
+          "requirements.txt",
+          "tests/test_a.py"
+        ],
+        "current_tree": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc",
+        "deleted": [
+          "tests/test_a.py"
+        ],
+        "modified": [
+          "a.py",
+          "requirements.txt"
+        ]
+      },
+      "reason": "claim says no files were modified but 4 changed",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 05_deps =====
+{
+  "counts": {
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "claim_id": "deps.unchanged",
+      "evidence": {
+        "after": [
+          "flask",
+          "requests"
+        ],
+        "before": [
+          "requests"
+        ],
+        "new": [
+          "flask"
+        ]
+      },
+      "reason": "new dependencies detected: ['flask']",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 06_secrets =====
+{
+  "counts": {
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "claim_id": "secrets.none_added",
+      "evidence": {
+        "matches": [
+          {
+            "line": "AKIA1234567890123456",
+            "path": "a.py",
+            "pattern": "AKIA[0-9A-Z]{16}"
+          }
+        ],
+        "scanned_files": [
+          "a.py",
+          "new.py",
+          "requirements.txt"
+        ]
+      },
+      "reason": "1 high-confidence secret pattern(s) in added lines",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 07_checks =====
+{
+  "counts": {
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "claim_id": "checks.not_disabled",
+      "evidence": {
+        "deleted": [
+          "tests/test_a.py"
+        ],
+        "issues": [
+          "deleted test/spec file: tests/test_a.py"
+        ]
+      },
+      "reason": "1 check-disabling signal(s) detected",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 08_span_ok =====
+{
+  "counts": {
+    "PASS": 1
+  },
+  "results": [
+    {
+      "claim_id": "span.matches",
+      "evidence": {
+        "end": 5,
+        "path": "a.py",
+        "sha256": "37accc02d76ab060e0a72d185a6d1b04efa2049f1562b75ccf5f83db251fddd3",
+        "start": 0
+      },
+      "reason": "evidence span is byte-exact",
+      "status": "PASS"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 09_span_forged =====
+{
+  "counts": {
+    "FAIL": 1
+  },
+  "results": [
+    {
+      "claim_id": "span.matches",
+      "evidence": {
+        "end": 5,
+        "path": "a.py",
+        "sha256": "37accc02d76ab060e0a72d185a6d1b04efa2049f1562b75ccf5f83db251fddd3",
+        "start": 0
+      },
+      "reason": "recorded evidence span does not match the file at verification time",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 10_manifest =====
+{
+  "counts": {
+    "FAIL": 1,
+    "INDETERMINATE": 1
+  },
+  "results": [
+    {
+      "claim_id": "tests.pass",
+      "evidence": {},
+      "reason": "execution disabled (--no-run); claim was not falsified",
+      "status": "INDETERMINATE"
+    },
+    {
+      "claim_id": "manifest.required_claims",
+      "evidence": {
+        "claimed": [
+          "tests.pass"
+        ],
+        "missing": [
+          "deps.unchanged",
+          "secrets.none_added"
+        ],
+        "required": [
+          "deps.unchanged",
+          "secrets.none_added"
+        ]
+      },
+      "reason": "missing required claims: ['deps.unchanged', 'secrets.none_added']",
+      "status": "FAIL"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 11_execution =====
+{
+  "counts": {
+    "PASS": 1
+  },
+  "results": [
+    {
+      "claim_id": "tests.pass",
+      "evidence": {
+        "argv": [
+          "/usr/bin/python3",
+          "-c",
+          "print('collected 3 items'); print('3 passed in 0.1s')"
+        ],
+        "counts": {
+          "collected": 3,
+          "failed": 0,
+          "parse_ok": true,
+          "passed": 3
+        },
+        "coverage_note": "receipts verifies the reported summary and cmd, not that the command exercised real tests; a hand-written summary is not proof",
+        "digest": "6d0ceb2986918cee5f12de0aa87d35ffe8ca04b56e4f27abc89cb1fc404f75d5",
+        "exit_code": 0,
+        "known_runner": false,
+        "repo_changed_during_verify": false,
+        "stdout_excerpt": "collected 3 items\n3 passed in 0.1s\n",
+        "timed_out": false,
+        "truncated": false
+      },
+      "reason": "whole suite executed: 3 passed, 0 failed, 3 collected",
+      "status": "PASS"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}
+
+===== 12_multi =====
+{
+  "counts": {
+    "FAIL": 1,
+    "INDETERMINATE": 3
+  },
+  "results": [
+    {
+      "claim_id": "tests.pass",
+      "evidence": {},
+      "reason": "execution disabled (--no-run); claim was not falsified",
+      "status": "INDETERMINATE"
+    },
+    {
+      "claim_id": "build.ok",
+      "evidence": {},
+      "reason": "execution disabled (--no-run); claim was not falsified",
+      "status": "INDETERMINATE"
+    },
+    {
+      "claim_id": "deps.unchanged",
+      "evidence": {
+        "after": [
+          "flask",
+          "requests"
+        ],
+        "before": [
+          "requests"
+        ],
+        "new": [
+          "flask"
+        ]
+      },
+      "reason": "new dependencies detected: ['flask']",
+      "status": "FAIL"
+    },
+    {
+      "claim_id": "api.unchanged",
+      "evidence": {
+        "proof_tool_supplied": false,
+        "required": [
+          "extractor",
+          "baseline_revision",
+          "visibility_rules",
+          "comparator",
+          "toolchain_version"
+        ]
+      },
+      "reason": "semantic claim: requires an explicit API extractor, baseline revision, visibility rules and comparator; none supplied",
+      "status": "INDETERMINATE"
+    }
+  ],
+  "tree_sha256": "2351bfcc594b375d5c0e5d90e9a2e09e1d95c6a83328d888a2176047da9b90fc"
+}

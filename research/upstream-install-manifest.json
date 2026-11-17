@@ -1,0 +1,56 @@
+[
+  {
+    "name": "anthropics-skills",
+    "repo": "https://github.com/anthropics/skills",
+    "status": "installed",
+    "files": 446,
+    "SKILL.md": 20,
+    "bytes": 4106800
+  },
+  {
+    "name": "superpowers",
+    "repo": "https://github.com/obra/superpowers",
+    "status": "installed",
+    "files": 236,
+    "SKILL.md": 15,
+    "bytes": 542813
+  },
+  {
+    "name": "mattpocock-skills",
+    "repo": "https://github.com/mattpocock/skills",
+    "status": "installed",
+    "files": 183,
+    "SKILL.md": 39,
+    "bytes": 278623
+  },
+  {
+    "name": "vercel-labs-agent-skills",
+    "repo": "https://github.com/vercel-labs/agent-skills",
+    "status": "installed",
+    "files": 443,
+    "SKILL.md": 9,
+    "bytes": 826888
+  },
+  {
+    "name": "vercel-labs-skills",
+    "repo": "https://github.com/vercel-labs/skills",
+    "status": "installed",
+    "files": 217,
+    "SKILL.md": 5,
+    "bytes": 442918
+  },
+  {
+    "name": "stop-slop",
+    "repo": "https://github.com/hardikpandya/stop-slop",
+    "status": "installed",
+    "files": 7,
+    "SKILL.md": 1,
+    "bytes": 7119
+  },
+  {
+    "name": "smeltery-skills",
+    "repo": "https://github.com/smeltery/skills",
+    "status": "unavailable",
+    "reason": "download returned 14 bytes"
+  }
+]
